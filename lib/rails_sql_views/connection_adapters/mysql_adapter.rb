@@ -11,29 +11,29 @@ module RailsSqlViews
       def supports_views?
         true
       end
-      
+
       # Returns true as this adapter supports replacing views.
       def replaces_views?
         true
       end
-      
+
       def base_tables(name = nil) #:nodoc:
         tables = []
         execute("SHOW FULL TABLES WHERE TABLE_TYPE='BASE TABLE'").each{|row| tables << row[0]}
         tables
       end
       alias nonview_tables base_tables
-      
+
       def views(name = nil) #:nodoc:
         views = []
         execute("SHOW FULL TABLES WHERE TABLE_TYPE='VIEW'").each{|row| views << row[0]}
         views
       end
 
-      def tables_with_views_included(name = nil)
+      def tables(name = nil)
         nonview_tables(name) + views(name)
       end
-      
+
       def structure_dump
         structure = ""
         base_tables.each do |table|
@@ -57,7 +57,7 @@ module RailsSqlViews
           raise "No view called #{view} found"
         end
       end
-      
+
       private
       def convert_statement(s)
         s.gsub!(/.* AS (select .*)/, '\1')
