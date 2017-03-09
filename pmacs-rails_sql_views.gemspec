@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
     "README",
     "Rakefile",
     "lib/active_record/view.rb",
-    "lib/core_ext/module.rb",
     "lib/pmacs-rails_sql_views.rb",
     "lib/rails_sql_views/connection_adapters/abstract/schema_definitions.rb",
     "lib/rails_sql_views/connection_adapters/abstract/schema_statements.rb",
@@ -59,4 +58,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<activerecord>, [">= 0"])
   end
 end
-

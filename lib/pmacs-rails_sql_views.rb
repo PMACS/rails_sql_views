@@ -25,8 +25,6 @@ $:.unshift(File.dirname(__FILE__))
 
 require 'active_record'
 
-require 'core_ext/module'
-
 require 'rails_sql_views/connection_adapters/abstract/schema_definitions'
 require 'rails_sql_views/connection_adapters/abstract/schema_statements'
 require 'rails_sql_views/connection_adapters/abstract_adapter'
@@ -42,7 +40,7 @@ ActiveRecord::ConnectionAdapters::AbstractAdapter.class_eval do
 end
 
 ActiveRecord::SchemaDumper.class_eval do
-  include RailsSqlViews::SchemaDumper
+  prepend RailsSqlViews::SchemaDumper
 end
 
 RailsSqlViews::Loader.load_extensions
