@@ -42,7 +42,7 @@ ActiveRecord::ConnectionAdapters::AbstractAdapter.class_eval do
 end
 
 ActiveRecord::SchemaDumper.class_eval do
-  include RailsSqlViews::SchemaDumper
+  prepend RailsSqlViews::SchemaDumper
 end
 
 RailsSqlViews::Loader.load_extensions
