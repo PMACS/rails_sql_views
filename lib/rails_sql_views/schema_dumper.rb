@@ -43,7 +43,7 @@ module RailsSqlViews
         sorted_views = view_creation_order | @connection.views
       end
       sorted_views.each do |v|
-        next if [ActiveRecord::Migrator.schema_migrations_table_name, ignore_views].flatten.any? do |ignored|
+        next if [ActiveRecord::SchemaMigration.table_name, ignore_views].flatten.any? do |ignored|
           case ignored
           when String then v == ignored
           when Symbol then v == ignored.to_s
@@ -88,7 +88,7 @@ module RailsSqlViews
 
     def tables(stream)
       @connection.base_tables.sort.each do |tbl|
-        next if [ActiveRecord::Migrator.schema_migrations_table_name, ignore_tables].flatten.any? do |ignored|
+        next if [ActiveRecord::SchemaMigration.table_name, ignore_tables].flatten.any? do |ignored|
           case ignored
           when String then tbl == ignored
           when Regexp then tbl =~ ignored
