@@ -17,6 +17,7 @@ module RailsSqlViews
     # Add views to the end of the dump stream
     def dump(stream)
       super(stream)
+      remove_trailer(stream)
       begin
         if @connection.supports_views?
           views(stream)
@@ -100,5 +101,8 @@ module RailsSqlViews
       end
     end
 
+    def remove_trailer(stream)
+      stream.sub!(/\s*?end\z/)
+    end
   end
 end
