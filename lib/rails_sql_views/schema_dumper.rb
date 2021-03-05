@@ -102,7 +102,7 @@ module RailsSqlViews
     end
 
     def remove_trailer(stream)
-      stream.sub!(/\s+?end\z/)
+      stream.sub!(/\s*?end\z/)
     end
   end
 end
