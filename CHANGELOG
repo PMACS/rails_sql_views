@@ -1,3 +1,6 @@
+ 0.12.4
+ * Use latest migration_table_name logic from DatabaseCleaner that accounts for Rails 7.2
+
  0.12.3
  * Fix deprecation of ActiveRecord::SchemaMigration.table_name in Rails 7.1
 
