@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name = "pmacs-rails_sql_views".freeze
-  s.version = RailsSqlViews::VERSION
+  s.version = "1.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
