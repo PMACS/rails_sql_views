@@ -13,7 +13,7 @@ module RailsSqlViews
         SQL
 
         execute(sql, name).map do |row|
-          row[0]
+          row['name']
         end
       end
       alias nonview_tables base_tables
@@ -26,7 +26,7 @@ module RailsSqlViews
         SQL
 
         execute(sql, name).map do |row|
-          row[0]
+          row['name']
         end
       end
 
