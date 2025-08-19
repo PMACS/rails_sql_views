@@ -26,7 +26,7 @@ module RailsSqlViews
         SQL
 
         execute(sql, name).map do |row|
-          row[0]
+          row['name']
         end
       end
 
