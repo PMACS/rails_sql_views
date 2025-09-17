@@ -39,8 +39,7 @@ Gem::Specification.new do |s|
     "lib/rails_sql_views/connection_adapters/sqlserver_adapter.rb",
     "lib/rails_sql_views/loader.rb",
     "lib/rails_sql_views/migration/command_recorder.rb",
-    "lib/rails_sql_views/schema_dumper.rb",
-    "lib/rails_sql_views/version.rb"
+    "lib/rails_sql_views/schema_dumper.rb"
   ]
   s.homepage = "http://github.com/pmacs/rails_sql_views".freeze
   s.rubygems_version = "3.3.27".freeze
