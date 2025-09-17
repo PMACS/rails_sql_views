@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name = "pmacs-rails_sql_views".freeze
-  s.version = "0.12.4"
+  s.version = "1.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
@@ -51,9 +51,8 @@ Gem::Specification.new do |s|
   end
 
   if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<activerecord>.freeze, [">= 0"])
+    s.add_runtime_dependency(%q<activerecord>.freeze, [">= 8"])
   else
-    s.add_dependency(%q<activerecord>.freeze, [">= 0"])
+    s.add_dependency(%q<activerecord>.freeze, [">= 8"])
   end
 end
-

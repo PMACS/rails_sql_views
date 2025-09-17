@@ -13,7 +13,7 @@ module RailsSqlViews
         SQL
 
         execute(sql, name).map do |row|
-          row[0]
+          row['name']
         end
       end
       alias nonview_tables base_tables
@@ -26,7 +26,7 @@ module RailsSqlViews
         SQL
 
         execute(sql, name).map do |row|
-          row[0]
+          row['name']
         end
       end
 
@@ -38,7 +38,7 @@ module RailsSqlViews
           WHERE name = '#{view}' AND NOT name = 'sqlite_sequence'
         SQL
 
-        (select_value(sql, name).gsub("CREATE VIEW #{view} AS ", "")) or raise "No view called #{view} found"
+        (select_value(sql, name).gsub("CREATE VIEW \"#{view}\" AS ", "")) or raise "No view called #{view} found"
       end
 
       def supports_view_columns_definition?
